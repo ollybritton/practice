@@ -1,23 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+
+import Sidebar from './components/Sidebar'
+import Instructions from './components/Instructions'
+
+import { randomScale } from './exercises/random'
+import { ExerciseData } from './exercises/data'
+
+console.log(ExerciseData)
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Sidebar />
+      <Instructions data={ExerciseData} exercise={randomScale(ExerciseData[0].exercises.scales)} />
     </div>
   );
 }
